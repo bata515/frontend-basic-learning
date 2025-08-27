@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript サンプル</title>
+  </head>
+  <body>
+    <script>
+      document.write("税込の計算処理をする関数です。<br>");
+      window.alert("Welcome to JavaScript!");
+
+      //アロー関数
+      const calculateTax = (amount) => {
+        const taxRate = 0.1;
+        return amount + amount * taxRate;
+      };
+
+      //さらに省略形
+      const calculateTax2 = (amount) => amount + amount * 0.1;
+
+      const result = calculateTax(1000);
+      document.write("1000円の税込価格は" + result + "円です。");
+      console.log(typeof calculateTax);
+    </script>
+  </body>
+</html>
