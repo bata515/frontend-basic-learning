@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document Object Model (DOM)</title>
+  </head>
+  <body>
+    <p id="diceContainer">サイコロ：<span id="dice">?</span></p>
+    <div><button id="rollButton">サイコロを振る</button></div>
+    <script>
+      document.getElementById("rollButton").addEventListener("click", () => {
+        document.getElementById("dice").textContent =
+          Math.floor(Math.random() * 6) + 1;
+
+        let bool = document.getElementById("dice").textContent === "6";
+
+        if (bool) {
+          // サイコロが振られた後の処理
+          alert("おめでとうございます！6が出ました！");
+        }
+      });
+
+      const prefecture = ["沖縄", "北海道"];
+      prefecture.push("東京");
+      prefecture.push("大阪");
+      prefecture.forEach((name) => {
+        document.write(name + " ");
+      });
+    </script>
+  </body>
+</html>

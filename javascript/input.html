@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document Object Model (DOM)</title>
+  </head>
+  <body>
+    <div>
+      <input type="number" id="price" /> ✖️ 1.1 =
+      <span id="result">?</span>
+    </div>
+    <div style="margin-top: 1em">
+      <button id="calculateButton">税込価格を計算</button>
+    </div>
+
+    <script>
+      document
+        .getElementById("calculateButton")
+        .addEventListener("click", () => {
+          const price = parseFloat(document.getElementById("price").value);
+          const result = price * 1.1;
+          document.getElementById("result").textContent = Math.round(result);
+        });
+
+      //パスワードの元となる配列を作成
+      const seeds = ["1", "2", "3", "A", "B", "C", "D"];
+      //windowのプロンプトでパスワードの桁数を取得
+      const passwordLength = parseInt(
+        window.prompt("生成したいパスワードの桁数を入力してください")
+      );
+      let password = "";
+      //乱数を生成し、配列からランダムに値を取得してパスワードを作成
+      for (let i = 0; i < passwordLength; i++) {
+        const randomIndex = Math.floor(Math.random() * seeds.length);
+        password += seeds[randomIndex];
+      }
+      document.write("生成されたパスワードは" + password + "です");
+    </script>
+  </body>
+</html>
